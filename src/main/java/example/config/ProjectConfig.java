@@ -16,10 +16,10 @@ public class ProjectConfig {
     }
 
     @Bean
-    public Person person() {
+    public Person person(Vehicle vehicle) {
         Person person = new Person();
         person.setName("Lucy");
-        person.setVehicle(vehicle());
+        person.setVehicle(vehicle);
         return person;
     }
 
