@@ -1,7 +1,7 @@
 package example.beans;
 
 
-
+import org.springframework.stereotype.Component;
 
 
 public class Vehicle {

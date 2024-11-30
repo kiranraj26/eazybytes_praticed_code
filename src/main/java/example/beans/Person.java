@@ -1,27 +1,43 @@
 package example.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import example.beans.Vehicle;
+
+@Component
 public class Person {
 
-    public Person(){
+
+
+    private String name="Lucky";
+
+    private final Vehicle vehicle;
+
+    @Autowired
+    public Person(@Qualifier("vehicle2")Vehicle vehicle){
         System.out.println("Person bean created by Spring");
+        this.vehicle = vehicle;
     }
 
-    private String name;
-    private Vehicle vehicle;
+    /*
+    The @Autowired annotation marks on a field, constructor, Setter method
+    is used to auto-wire the beans that is ‘injecting beans'(Objects) at runtime
+    by Spring Dependency Injection mechanism
+    * */
+    /*@Autowired*/
+
+
+
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
+
 
     public Vehicle getVehicle() {
         return vehicle;
-    }
-
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
     }
 }
